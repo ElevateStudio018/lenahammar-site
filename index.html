@@ -153,6 +153,44 @@ footer a{text-decoration:none}footer nav{display:flex;gap:20px}
 .logo img{height:46px;width:auto}
 header:not(.solid) .logo img{filter:invert(1)}
 .card{border:1px solid var(--line)}
+
+/* mobile */
+.burger{display:none;background:transparent;border:0;width:44px;height:44px;cursor:pointer;color:inherit;position:relative;z-index:31}
+.burger span{display:block;width:22px;height:2px;background:currentColor;margin:5px auto;border-radius:2px;transition:transform .25s,opacity .25s}
+.mnav{position:fixed;inset:0;z-index:30;background:#fff;color:#1c1b19;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:0 32px;opacity:0;pointer-events:none;transition:opacity .25s}
+.mnav a{font-size:30px;font-weight:500;text-decoration:none;padding:6px 0}
+.mnav .btn{padding:16px 28px;margin-top:24px;align-self:flex-start;font-size:16px}
+body.open .mnav{opacity:1;pointer-events:auto}
+body.open .burger{color:#1c1b19}
+body.open header{z-index:40}
+body.open .logo img{filter:none}
+body.open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+body.open .burger span:nth-child(2){opacity:0}
+body.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media (max-width:900px){
+  .burger{display:block}.nav>.btn{display:none}
+  .logo img{height:38px}
+  .hero .wrap{padding-bottom:48px}.hero p{font-size:15px}
+  .hero .actions .btn{flex:1;justify-content:center}
+  .tabs,.filters{display:flex;flex-wrap:nowrap;overflow-x:auto;max-width:100%;scrollbar-width:none}
+  .tabs::-webkit-scrollbar,.filters::-webkit-scrollbar{display:none}
+  .tab,.filters button{white-space:nowrap;flex:none}
+  .cat h3{font-size:18px}.cat span{font-size:11px;line-height:1.4;display:block}.cat div{left:14px;right:14px;bottom:14px}
+  .contactline .btn{flex:1;justify-content:center}
+  .qband{padding:80px 0}
+  .contact h2{font-size:34px}
+  .rows a{font-size:15px}
+  .gt h2{font-size:30px}
+  .masonry{columns:2;column-gap:8px;padding:0 8px}.masonry img{margin-bottom:8px;border-radius:10px}
+}
+@media (max-width:640px){
+  .prices .grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -24px;padding:0 24px 8px;scrollbar-width:none}
+  .prices .grid::-webkit-scrollbar{display:none}
+  .prices .card{flex:0 0 84%;scroll-snap-align:center}
+  .card>img{height:160px}
+  .swipe{display:block!important}
+}
+.swipe{display:none;font-size:13px;color:var(--muted);margin:-18px 0 16px}
 </style>
 </head>
 <body>
@@ -166,9 +204,10 @@ header:not(.solid) .logo img{filter:invert(1)}
       <li><a href="#priser">Priser</a></li>
       <li><a href="#om">Om mig</a></li>
     </ul>
-    <a class="btn btn-white" href="#kontakt">Kontakta mig</a>
+    <a class="btn btn-white" href="#kontakt">Kontakta mig</a><button class="burger" id="burger" aria-label="Meny" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
+<nav class="mnav" id="mnav"><a href="index.html#tjanster">Tjänster</a><a href="galleri.html">Galleri</a><a href="index.html#priser">Priser</a><a href="index.html#om">Om mig</a><a class="btn btn-dark" href="index.html#kontakt">Kontakta mig</a></nav>
 
 <section class="hero">
   <video autoplay muted loop playsinline preload="auto" poster="img/brollop-00.jpg">
@@ -239,6 +278,7 @@ header:not(.solid) .logo img{filter:invert(1)}
       <button class="tab" role="tab" aria-selected="false" data-t="portratt">Porträtt</button>
       <button class="tab" role="tab" aria-selected="false" data-t="foretag">Företag</button>
     </div>
+    <p class="swipe">Svep för fler paket →</p>
 
     <div class="panel on" id="p-brollop"><div class="grid">
       <div class="card"><img src="img/brollop-12.jpg" alt="" loading="lazy"><div class="b"><h3>Stadshuspaket</h3><p class="sub">Porträtt, vigsel och gruppbilder · ca 1,5 h</p><ul><li>50–60 redigerade, högupplösta bilder</li><li>3 st A4 + 3 st A5 förstoringar</li><li>Efterbearbetning i Photoshop</li></ul><p class="price">9 500 kr</p></div></div>
@@ -342,6 +382,10 @@ const st=document.getElementById('strip');mixed.filter((_,i)=>i%5===2).slice(0,1
 // price tabs
 const tabs=document.querySelectorAll('.tab');
 tabs.forEach(b=>b.onclick=()=>{tabs.forEach(x=>x.setAttribute('aria-selected',x===b));document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+b.dataset.t))});
+</script>
+<script>
+const bg=document.getElementById('burger');bg.onclick=()=>{const o=document.body.classList.toggle('open');bg.setAttribute('aria-expanded',o)};
+document.querySelectorAll('#mnav a').forEach(a=>a.onclick=()=>document.body.classList.remove('open'));
 </script>
 </body>
 </html>
