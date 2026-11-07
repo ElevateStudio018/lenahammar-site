@@ -54,6 +54,7 @@ header{position:absolute;inset:0 0 auto;z-index:10;color:#fff}
 .track{display:flex;gap:12px;width:max-content;animation:scroll 90s linear infinite}
 .track.rev{animation-direction:reverse;margin-top:12px}
 .track img{height:240px;width:auto;border-radius:var(--rc);object-fit:cover}
+.mbtn{text-align:center;margin-top:28px}
 .marquee:hover .track{animation-play-state:paused}
 @keyframes scroll{to{transform:translateX(-50%)}}
 @media (max-width:760px){.track img{height:150px}}
@@ -83,24 +84,8 @@ header{position:absolute;inset:0 0 auto;z-index:10;color:#fff}
 .head p{color:var(--muted);max-width:40ch}
 
 /* big feature split */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 12px}
-.split .big{border-radius:var(--rc);overflow:hidden;height:86vh;min-height:520px}
-.split .big img{width:100%;height:100%;object-fit:cover}
-.split .side{display:grid;grid-template-rows:1fr 1fr;gap:12px}
-.split .side>div{border-radius:var(--rc);overflow:hidden}
-.split .side img{width:100%;height:100%;object-fit:cover}
-.split .txt{background:var(--soft);padding:48px;display:flex;flex-direction:column;justify-content:flex-end}
-.split .txt p{color:var(--muted);margin:16px 0 24px;max-width:42ch}
-@media (max-width:900px){.split{grid-template-columns:1fr}.split .big{height:70vh}.split .side{grid-template-rows:auto auto}.split .side>div:first-child{height:50vh}}
 
 /* gallery */
-.filters{display:inline-flex;gap:4px;padding:5px;background:var(--soft);border-radius:var(--r);flex-wrap:wrap}
-.filters button{border:0;background:transparent;font:500 14px "Poppins",sans-serif;color:var(--muted);padding:10px 20px;border-radius:var(--r);cursor:pointer}
-.filters button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
-.masonry{columns:4 260px;column-gap:12px;padding:0 12px}
-.masonry img{width:100%;margin-bottom:12px;border-radius:var(--rc);cursor:zoom-in;break-inside:avoid;transition:opacity .2s}
-.masonry img:hover{opacity:.88}
-.more{text-align:center;margin-top:32px}
 
 /* prices */
 .prices{background:var(--soft)}
@@ -153,7 +138,8 @@ header{position:absolute;inset:0 0 auto;z-index:10;color:#fff}
 @media (max-width:900px){.contact{grid-template-columns:1fr;padding:56px 24px}}
 
 /* insta strip */
-.strip{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin-top:80px}
+.gt{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:96px;margin-bottom:28px;flex-wrap:wrap}
+.strip{display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
 .strip img{aspect-ratio:1;width:100%;object-fit:cover}
 @media (max-width:760px){.strip{grid-template-columns:repeat(4,1fr)}}
 footer{padding:36px 0 52px;font-size:13px;color:var(--muted)}
@@ -175,7 +161,7 @@ footer a{text-decoration:none}footer nav{display:flex;gap:20px}
     <a class="logo" href="#">Lena Hammar <span>Fotograf</span></a>
     <ul>
       <li><a href="#tjanster">Tjänster</a></li>
-      <li><a href="#galleri">Galleri</a></li>
+      <li><a href="galleri.html">Galleri</a></li>
       <li><a href="#priser">Priser</a></li>
       <li><a href="#om">Om mig</a></li>
     </ul>
@@ -191,16 +177,17 @@ footer a{text-decoration:none}footer nav{display:flex;gap:20px}
     <h1>Bilder som berör. Från första blicken.</h1>
     <p>Jag är fotograf i Stockholm och fotograferar bröllop, familjer, barn och företag – i hela Sverige.</p>
     <div class="actions">
-      <a class="btn btn-white" href="#galleri">Se mina bilder</a>
+      <a class="btn btn-white" href="galleri.html">Se mina bilder</a>
       <a class="btn btn-ghost" href="#priser">Bröllopspaket</a>
     </div>
   </div>
   <span class="credit">Video: Pavel Danilyuk / Pexels</span>
 </section>
 
-<div class="marquee" aria-hidden="true">
-  <div class="track" id="m1"></div>
+<div class="marquee" >
+  <div class="track" id="m1" aria-hidden="true"></div>
   <div class="track rev" id="m2"></div>
+  <div class="mbtn"><a class="btn btn-dark" href="galleri.html">Se hela galleriet</a></div>
 </div>
 
 <section>
@@ -231,40 +218,12 @@ footer a{text-decoration:none}footer nav{display:flex;gap:20px}
       <p>Paketlösningar för det mesta – men allt går att skräddarsy efter era önskemål.</p>
     </div>
     <div class="cats">
-      <a class="cat" href="#galleri" data-f="brollop"><img src="img/brollop-07.jpg" alt=""><div><h3>Bröllop</h3><span>Stadshuset, kyrkan, ladan</span></div></a>
-      <a class="cat" href="#galleri" data-f="familj"><img src="img/familj-09.jpg" alt=""><div><h3>Familj & barn</h3><span>Hemma eller utomhus</span></div></a>
-      <a class="cat" href="#galleri" data-f="portratt"><img src="img/portratt-01.jpg" alt=""><div><h3>Porträtt</h3><span>Press, hemsida, LinkedIn</span></div></a>
-      <a class="cat" href="#galleri" data-f="foretag"><img src="img/foretag-14.jpg" alt=""><div><h3>Företag</h3><span>Portabel studio på plats</span></div></a>
+      <a class="cat" href="galleri.html#brollop"><img src="img/brollop-07.jpg" alt=""><div><h3>Bröllop</h3><span>Stadshuset, kyrkan, ladan</span></div></a>
+      <a class="cat" href="galleri.html#familj"><img src="img/familj-09.jpg" alt=""><div><h3>Familj & barn</h3><span>Hemma eller utomhus</span></div></a>
+      <a class="cat" href="galleri.html#portratt"><img src="img/portratt-01.jpg" alt=""><div><h3>Porträtt</h3><span>Press, hemsida, LinkedIn</span></div></a>
+      <a class="cat" href="galleri.html#foretag"><img src="img/foretag-14.jpg" alt=""><div><h3>Företag</h3><span>Portabel studio på plats</span></div></a>
     </div>
   </div>
-</section>
-
-<div class="split">
-  <div class="big"><img src="img/brollop-00.jpg" alt="Brudpar i solnedgång på en klippa" loading="lazy"></div>
-  <div class="side">
-    <div><img src="img/brollop-21.jpg" alt="Brudpar på bröllopsfest" loading="lazy"></div>
-    <div class="txt">
-      <p class="eyebrow">Bröllop</p>
-      <h2>Hela dagen, eller bara vigseln.</h2>
-      <p>Från smink och påklädning till ringbyte, riskastning och brudens skål. Jag fotograferar mest i Stockholm men gärna över hela Sverige.</p>
-      <div><a class="btn btn-dark" href="#priser">Se bröllopspaket</a></div>
-    </div>
-  </div>
-</div>
-
-<section id="galleri">
-  <div class="wrap head">
-    <h2>Galleri</h2>
-    <div class="filters" id="filters">
-      <button aria-pressed="true" data-f="alla">Alla</button>
-      <button aria-pressed="false" data-f="brollop">Bröllop</button>
-      <button aria-pressed="false" data-f="familj">Familj & barn</button>
-      <button aria-pressed="false" data-f="portratt">Porträtt</button>
-      <button aria-pressed="false" data-f="foretag">Företag</button>
-    </div>
-  </div>
-  <div class="masonry" id="gal"></div>
-  <div class="more"><button class="btn btn-line" id="moreBtn">Visa fler bilder</button></div>
 </section>
 
 <section id="priser" class="prices">
@@ -311,7 +270,6 @@ footer a{text-decoration:none}footer nav{display:flex;gap:20px}
     <div class="pics">
       <img src="img/familj-02.jpg" alt="" loading="lazy"><img src="img/brollop-40.jpg" alt="" loading="lazy"><img src="img/portratt-18.jpg" alt="" loading="lazy">
       <img src="img/foretag-04.jpg" alt="" loading="lazy"><img src="img/familj-26.jpg" alt="" loading="lazy"><img src="img/brollop-16.jpg" alt="" loading="lazy">
-      <img src="img/portratt-30.jpg" alt="" loading="lazy"><img src="img/foretag-47.jpg" alt="" loading="lazy"><img src="img/familj-30.jpg" alt="" loading="lazy">
     </div>
     <div>
       <p class="eyebrow">Om mig</p>
@@ -352,13 +310,14 @@ footer a{text-decoration:none}footer nav{display:flex;gap:20px}
       </div>
     </div>
   </div>
-  <a class="strip" id="strip" href="https://instagram.com/lenahammarfotograf" target="_blank" rel="noopener" aria-label="Instagram"></a>
+  <div class="wrap gt"><h2>Galleri</h2><a class="btn btn-dark" href="galleri.html">Se hela galleriet</a></div>
+  <a class="strip" id="strip" href="galleri.html" aria-label="Galleri"></a>
 </section>
 
 <footer>
   <div class="wrap">
     <span>© Fotograf Lena Hammar</span>
-    <nav><a href="#galleri">Galleri</a><a href="#priser">Priser</a><a href="#kontakt">Kontakt</a></nav>
+    <nav><a href="galleri.html">Galleri</a><a href="#priser">Priser</a><a href="#kontakt">Kontakt</a></nav>
   </div>
 </footer>
 
@@ -377,27 +336,7 @@ const fillTrack=(id,list)=>{const t=document.getElementById(id);[...list,...list
 fillTrack('m1',mixed.filter((_,i)=>i%3===0).slice(0,22));
 fillTrack('m2',mixed.filter((_,i)=>i%3===1).slice(0,22));
 // strip
-const st=document.getElementById('strip');mixed.filter((_,i)=>i%7===2).slice(0,8).forEach(s=>st.appendChild(el(s)));
-
-// gallery
-const gal=document.getElementById('gal'),more=document.getElementById('moreBtn');
-let cur=mixed,shown=0;const STEP=32;
-function render(reset){if(reset){gal.innerHTML='';shown=0}
-  cur.slice(shown,shown+STEP).forEach((s,k)=>{const im=el(s);im.dataset.i=shown+k;gal.appendChild(im)});
-  shown=Math.min(shown+STEP,cur.length);more.style.display=shown>=cur.length?'none':'';}
-function filt(f){cur=f==='alla'?mixed:all[f];document.querySelectorAll('#filters button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.f===f));render(true)}
-document.querySelectorAll('#filters button').forEach(b=>b.onclick=()=>filt(b.dataset.f));
-document.querySelectorAll('.cat').forEach(a=>a.addEventListener('click',()=>filt(a.dataset.f)));
-more.onclick=()=>render(false);render(true);
-
-// lightbox
-const lb=document.getElementById('lb'),lbi=lb.querySelector('img');let li=0;
-const open=i=>{li=(i+cur.length)%cur.length;lbi.src=cur[li];lb.classList.add('on')};
-gal.addEventListener('click',e=>{if(e.target.tagName==='IMG')open(+e.target.dataset.i)});
-lb.querySelector('.x').onclick=()=>lb.classList.remove('on');
-lb.querySelector('.p').onclick=()=>open(li-1);lb.querySelector('.n').onclick=()=>open(li+1);
-lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('on')});
-addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')open(li-1);if(e.key==='ArrowRight')open(li+1)});
+const st=document.getElementById('strip');mixed.filter((_,i)=>i%5===2).slice(0,16).forEach(s=>st.appendChild(el(s)));
 
 // price tabs
 const tabs=document.querySelectorAll('.tab');

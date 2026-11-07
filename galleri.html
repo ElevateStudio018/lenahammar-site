@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galleri – Lena Hammar</title>
+<meta name="description" content="Lena Hammar – fotograf i Stockholm. Bröllop, familj och barn, porträtt och företag.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f5f2;--surface:#fff;--ink:#1c1b19;--muted:#6b6862;--line:#e4e0da;--accent:#1c1b19;--accent-ink:#f7f5f2;--soft:#ece8e2;--r:999px;--rc:16px;--max:1320px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141413;--surface:#1c1c1a;--ink:#f1eee9;--muted:#a29e97;--line:#2e2d2a;--accent:#f1eee9;--accent-ink:#141413;--soft:#1f1f1d}}
+:root[data-theme="dark"]{--bg:#141413;--surface:#1c1c1a;--ink:#f1eee9;--muted:#a29e97;--line:#2e2d2a;--accent:#f1eee9;--accent-ink:#141413;--soft:#1f1f1d}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Poppins",system-ui,sans-serif;background:var(--bg);color:var(--ink);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}img{display:block;max-width:100%}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-weight:500;line-height:1.12;letter-spacing:-.02em}
+h2{font-size:clamp(30px,4.2vw,52px)}
+.eyebrow{font-size:13px;font-weight:500;color:var(--muted);margin-bottom:14px}
+section{padding:110px 0}
+@media (max-width:760px){section{padding:72px 0}}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:var(--r);font:500 15px/1 "Poppins",sans-serif;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-dark{background:var(--accent);color:var(--accent-ink)}
+.btn-line{border-color:var(--line);color:var(--ink);background:transparent}
+.btn-white{background:#fff;color:#1c1b19}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+/* nav */
+header{position:absolute;inset:0 0 auto;z-index:10;color:#fff}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+.logo{font-weight:500;font-size:17px;text-decoration:none}.logo span{font-weight:300;opacity:.75}
+.nav ul{display:flex;gap:30px;list-style:none;font-size:14px}.nav ul a{text-decoration:none;opacity:.85}
+.nav .btn{padding:11px 20px;font-size:14px}
+@media (max-width:900px){.nav ul{display:none}}
+
+/* hero */
+.hero{position:relative;height:100svh;min-height:620px;color:#fff;overflow:hidden;background:#222;padding:0}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:rgba(15,14,12,.42)}
+.hero .wrap{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:72px}
+.hero h1{font-size:clamp(42px,7vw,92px);max-width:12ch}
+.hero p{max-width:46ch;margin:22px 0 32px;font-size:17px;opacity:.9}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+.credit{position:absolute;right:24px;bottom:20px;z-index:2;font-size:11px;opacity:.6}
+
+/* marquee */
+.marquee{overflow:hidden;padding:12px 0;background:var(--bg)}
+.track{display:flex;gap:12px;width:max-content;animation:scroll 90s linear infinite}
+.track.rev{animation-direction:reverse;margin-top:12px}
+.track img{height:240px;width:auto;border-radius:var(--rc);object-fit:cover}
+.mbtn{text-align:center;margin-top:28px}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@media (max-width:760px){.track img{height:150px}}
+@media (prefers-reduced-motion:reduce){.track{animation:none}}
+
+/* intro collage */
+.intro{display:grid;grid-template-columns:1.1fr 1fr;gap:72px;align-items:center}
+.collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px;gap:12px}
+.collage img{width:100%;height:100%;object-fit:cover;border-radius:var(--rc)}
+.collage img:nth-child(1){grid-row:1/3}
+.collage img:nth-child(4){grid-column:1/3}
+.intro p{color:var(--muted);margin:0 0 16px;max-width:50ch}
+.intro h2{margin-bottom:24px}
+.contactline{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+@media (max-width:900px){.intro{grid-template-columns:1fr;gap:40px}.collage{grid-template-rows:160px 160px 160px}}
+
+/* category blocks */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cat{position:relative;aspect-ratio:3/4;border-radius:var(--rc);overflow:hidden;color:#fff;text-decoration:none}
+.cat img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.cat:hover img{transform:scale(1.05)}
+.cat::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(0,0,0,.6))}
+.cat div{position:absolute;left:22px;right:22px;bottom:20px;z-index:2}
+.cat h3{font-size:24px}.cat span{font-size:13px;opacity:.85}
+@media (max-width:900px){.cats{grid-template-columns:1fr 1fr}}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+.head p{color:var(--muted);max-width:40ch}
+
+/* big feature split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 12px}
+.split .big{border-radius:var(--rc);overflow:hidden;height:86vh;min-height:520px}
+.split .big img{width:100%;height:100%;object-fit:cover}
+.split .side{display:grid;grid-template-rows:1fr 1fr;gap:12px}
+.split .side>div{border-radius:var(--rc);overflow:hidden}
+.split .side img{width:100%;height:100%;object-fit:cover}
+.split .txt{background:var(--soft);padding:48px;display:flex;flex-direction:column;justify-content:flex-end}
+.split .txt p{color:var(--muted);margin:16px 0 24px;max-width:42ch}
+@media (max-width:900px){.split{grid-template-columns:1fr}.split .big{height:70vh}.split .side{grid-template-rows:auto auto}.split .side>div:first-child{height:50vh}}
+
+/* gallery */
+.filters{display:inline-flex;gap:4px;padding:5px;background:var(--soft);border-radius:var(--r);flex-wrap:wrap}
+.filters button{border:0;background:transparent;font:500 14px "Poppins",sans-serif;color:var(--muted);padding:10px 20px;border-radius:var(--r);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.masonry{columns:4 260px;column-gap:12px;padding:0 12px}
+.masonry img{width:100%;margin-bottom:12px;border-radius:var(--rc);cursor:zoom-in;break-inside:avoid;transition:opacity .2s}
+.masonry img:hover{opacity:.88}
+.more{text-align:center;margin-top:32px}
+
+/* prices */
+.prices{background:var(--soft)}
+.tabs{display:inline-flex;gap:4px;padding:5px;background:var(--surface);border-radius:var(--r);margin-bottom:32px;flex-wrap:wrap}
+.tab{border:0;background:transparent;font:500 14px "Poppins",sans-serif;color:var(--muted);padding:10px 20px;border-radius:var(--r);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
+.panel{display:none}.panel.on{display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--surface);border-radius:var(--rc);overflow:hidden;display:flex;flex-direction:column}
+.card>img{height:200px;width:100%;object-fit:cover}
+.card .b{padding:26px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:19px;margin-bottom:4px}
+.card .sub{color:var(--muted);font-size:14px;margin-bottom:16px}
+.card ul{list-style:none;font-size:14.5px;color:var(--muted);flex:1}
+.card li{padding:7px 0;border-top:1px solid var(--line)}
+.card .price{font-size:28px;font-weight:500;margin-top:20px;letter-spacing:-.02em}
+.card .price small{font-size:13px;font-weight:300;color:var(--muted)}
+.note{font-size:13px;color:var(--muted);margin-top:24px;max-width:70ch}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.about p{color:var(--muted);margin-bottom:16px}
+.about .pics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.about .pics img{aspect-ratio:1;width:100%;object-fit:cover;border-radius:12px}
+.facts{display:flex;gap:40px;margin-top:28px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.facts strong{display:block;font-weight:500;color:var(--ink);font-size:16px}
+@media (max-width:900px){.about{grid-template-columns:1fr;gap:32px}}
+
+/* quotes on photo */
+.qband{position:relative;color:#fff;padding:140px 0;overflow:hidden}
+.qband>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.qband::after{content:"";position:absolute;inset:0;background:rgba(15,14,12,.55)}
+.qband .wrap{position:relative;z-index:2}
+.qgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:14px;margin-top:40px}
+.q{background:rgba(255,255,255,.1);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.18);border-radius:var(--rc);padding:30px;display:flex;flex-direction:column;justify-content:space-between;gap:22px}
+.q.big blockquote{font-size:19px}
+.q cite{font-style:normal;font-size:14px;opacity:.75}
+@media (max-width:900px){.qgrid{grid-template-columns:1fr}}
+
+/* contact */
+.contact{position:relative;border-radius:28px;overflow:hidden;color:#fff;padding:96px 56px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:end}
+.contact>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.contact::after{content:"";position:absolute;inset:0;background:rgba(15,14,12,.6)}
+.contact>div{position:relative;z-index:2}
+.contact h2{font-size:clamp(34px,5vw,60px)}
+.contact p{opacity:.8;margin-top:16px;max-width:42ch}
+.rows a{display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.22);text-decoration:none;font-size:17px}
+.rows a span{opacity:.6;font-size:14px}
+.contact .actions{margin-top:28px}
+@media (max-width:900px){.contact{grid-template-columns:1fr;padding:56px 24px}}
+
+/* insta strip */
+.gt{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:96px;margin-bottom:28px;flex-wrap:wrap}
+.strip{display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
+.strip img{aspect-ratio:1;width:100%;object-fit:cover}
+@media (max-width:760px){.strip{grid-template-columns:repeat(4,1fr)}}
+footer{padding:36px 0 52px;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{text-decoration:none}footer nav{display:flex;gap:20px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(10,10,9,.94);display:none;align-items:center;justify-content:center}
+.lb.on{display:flex}
+.lb img{max-width:92vw;max-height:88vh;border-radius:10px}
+.lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:48px;height:48px;border-radius:50%;font-size:22px;cursor:pointer}
+.lb .x{top:20px;right:20px}.lb .p{left:20px}.lb .n{right:20px}
+header.solid{position:absolute;color:var(--ink)}
+</style>
+</head>
+<body>
+<header class="solid"><div class="wrap nav">
+  <a class="logo" href="index.html">Lena Hammar <span>Fotograf</span></a>
+  <ul><li><a href="index.html#tjanster">Tjänster</a></li><li><a href="galleri.html">Galleri</a></li><li><a href="index.html#priser">Priser</a></li><li><a href="index.html#om">Om mig</a></li></ul>
+  <a class="btn btn-dark" href="index.html#kontakt">Kontakta mig</a>
+</div></header>
+<section style="padding-top:140px">
+  <div class="wrap head">
+    <div><p class="eyebrow"><a href="index.html" style="text-decoration:none">← Startsidan</a></p><h2>Galleri</h2></div>
+    <div class="filters" id="filters">
+      <button aria-pressed="true" data-f="alla">Alla</button>
+      <button aria-pressed="false" data-f="brollop">Bröllop</button>
+      <button aria-pressed="false" data-f="familj">Familj & barn</button>
+      <button aria-pressed="false" data-f="portratt">Porträtt</button>
+      <button aria-pressed="false" data-f="foretag">Företag</button>
+    </div>
+  </div>
+  <div class="masonry" id="gal"></div>
+  <div class="more"><button class="btn btn-line" id="moreBtn">Visa fler bilder</button></div>
+</section>
+<footer><div class="wrap"><span>© Fotograf Lena Hammar</span><nav><a href="index.html">Start</a><a href="index.html#priser">Priser</a><a href="index.html#kontakt">Kontakt</a></nav></div></footer>
+<div class="lb" id="lb"><img alt=""><button class="x" aria-label="Stäng">×</button><button class="p" aria-label="Föregående">‹</button><button class="n" aria-label="Nästa">›</button></div>
+<script>
+const N={brollop:58,familj:36,portratt:38,foretag:68};
+const pad=n=>String(n).padStart(2,'0');
+const all={};for(const c in N)all[c]=Array.from({length:N[c]},(_,i)=>`img/${c}-${pad(i)}.jpg`);
+const mixed=[];for(let i=0;i<68;i++)for(const c of ['brollop','familj','portratt','foretag'])if(all[c][i])mixed.push(all[c][i]);
+const gal=document.getElementById('gal'),more=document.getElementById('moreBtn');
+let cur=mixed,shown=0;const STEP=40;
+function render(reset){if(reset){gal.innerHTML='';shown=0}
+  cur.slice(shown,shown+STEP).forEach((s,k)=>{const im=new Image();im.src=s;im.alt='';im.loading='lazy';im.dataset.i=shown+k;gal.appendChild(im)});
+  shown=Math.min(shown+STEP,cur.length);more.style.display=shown>=cur.length?'none':'';}
+function filt(f){if(!all[f])f='alla';cur=f==='alla'?mixed:all[f];document.querySelectorAll('#filters button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.f===f));render(true)}
+document.querySelectorAll('#filters button').forEach(b=>b.onclick=()=>{history.replaceState(null,'','#'+b.dataset.f);filt(b.dataset.f)});
+more.onclick=()=>render(false);filt(location.hash.slice(1)||'alla');
+const lb=document.getElementById('lb'),lbi=lb.querySelector('img');let li=0;
+const open=i=>{li=(i+cur.length)%cur.length;lbi.src=cur[li];lb.classList.add('on')};
+gal.addEventListener('click',e=>{if(e.target.tagName==='IMG')open(+e.target.dataset.i)});
+lb.querySelector('.x').onclick=()=>lb.classList.remove('on');
+lb.querySelector('.p').onclick=()=>open(li-1);lb.querySelector('.n').onclick=()=>open(li+1);
+lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('on')});
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')open(li-1);if(e.key==='ArrowRight')open(li+1)});
+</script>
+</body>
+</html>
