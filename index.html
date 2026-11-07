@@ -9,9 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f7f5f2;--surface:#fff;--ink:#1c1b19;--muted:#6b6862;--line:#e4e0da;--accent:#1c1b19;--accent-ink:#f7f5f2;--soft:#ece8e2;--r:999px;--rc:16px;--max:1320px}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141413;--surface:#1c1c1a;--ink:#f1eee9;--muted:#a29e97;--line:#2e2d2a;--accent:#f1eee9;--accent-ink:#141413;--soft:#1f1f1d}}
-:root[data-theme="dark"]{--bg:#141413;--surface:#1c1c1a;--ink:#f1eee9;--muted:#a29e97;--line:#2e2d2a;--accent:#f1eee9;--accent-ink:#141413;--soft:#1f1f1d}
+:root{--bg:#ffffff;--surface:#ffffff;--ink:#1c1b19;--muted:#77736d;--line:#ece9e4;--accent:#1c1b19;--accent-ink:#f7f5f2;--soft:#f6f4f1;--r:999px;--rc:16px;--max:1320px}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:"Poppins",system-ui,sans-serif;background:var(--bg);color:var(--ink);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -152,13 +150,16 @@ footer a{text-decoration:none}footer nav{display:flex;gap:20px}
 .lb img{max-width:92vw;max-height:88vh;border-radius:10px}
 .lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:48px;height:48px;border-radius:50%;font-size:22px;cursor:pointer}
 .lb .x{top:20px;right:20px}.lb .p{left:20px}.lb .n{right:20px}
+.logo img{height:46px;width:auto}
+header:not(.solid) .logo img{filter:invert(1)}
+.card{border:1px solid var(--line)}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <a class="logo" href="#">Lena Hammar <span>Fotograf</span></a>
+    <a class="logo" href="#"><img src="img/logo.png" alt="Lena Hammar Fotograf"></a>
     <ul>
       <li><a href="#tjanster">Tjänster</a></li>
       <li><a href="galleri.html">Galleri</a></li>
