@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lena Hammar Fotograf</title>
+<meta name="description" content="Lena Hammar – fotograf i Stockholm. Bröllop, familj och barn, porträtt och företag.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f2; --surface:#ffffff; --ink:#1c1b19; --muted:#6b6862; --line:#e4e0da;
+  --accent:#1c1b19; --accent-ink:#f7f5f2; --soft:#ece8e2;
+  --r:999px; --r-card:18px; --max:1180px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141413; --surface:#1c1c1a; --ink:#f1eee9; --muted:#a29e97; --line:#2e2d2a;
+    --accent:#f1eee9; --accent-ink:#141413; --soft:#232320;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141413; --surface:#1c1c1a; --ink:#f1eee9; --muted:#a29e97; --line:#2e2d2a;
+  --accent:#f1eee9; --accent-ink:#141413; --soft:#232320;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Poppins",system-ui,sans-serif;background:var(--bg);color:var(--ink);font-weight:300;line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-weight:500;line-height:1.15;letter-spacing:-.02em}
+.eyebrow{font-size:13px;font-weight:500;color:var(--muted);margin-bottom:14px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:var(--r);font:500 15px/1 "Poppins",sans-serif;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-dark{background:var(--accent);color:var(--accent-ink)}
+.btn-line{border-color:var(--line);background:transparent;color:var(--ink)}
+.btn-white{background:#fff;color:#1c1b19}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+/* nav */
+header{position:absolute;inset:0 0 auto 0;z-index:10;color:#fff}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+.logo{font-weight:500;font-size:17px;text-decoration:none;letter-spacing:-.01em}
+.logo span{font-weight:300;opacity:.75}
+.nav ul{display:flex;gap:30px;list-style:none;font-size:14px}
+.nav ul a{text-decoration:none;opacity:.85}
+.nav ul a:hover{opacity:1}
+.nav .btn{padding:11px 20px;font-size:14px}
+@media (max-width:860px){.nav ul{display:none}}
+
+/* hero */
+.hero{position:relative;height:100svh;min-height:600px;color:#fff;overflow:hidden;background:#222}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:rgba(15,14,12,.42)}
+.hero .wrap{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:72px}
+.hero h1{font-size:clamp(40px,7vw,88px);max-width:12ch;font-weight:500}
+.hero p{max-width:46ch;margin:22px 0 32px;font-size:17px;opacity:.9}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero .credit{position:absolute;right:24px;bottom:20px;z-index:2;font-size:11px;opacity:.6}
+
+/* intro */
+section{padding:120px 0}
+.intro{display:grid;grid-template-columns:1fr 1.15fr;gap:72px;align-items:center}
+.intro img{width:100%;height:auto;border-radius:var(--r-card)}
+.intro h2{font-size:clamp(30px,4vw,46px);margin-bottom:24px}
+.intro p{color:var(--muted);margin-bottom:16px;max-width:52ch}
+.intro .contactline{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+@media (max-width:860px){.intro{grid-template-columns:1fr;gap:40px}section{padding:80px 0}}
+
+/* services */
+.services{border-top:1px solid var(--line)}
+.svc{display:grid;grid-template-columns:80px 1fr 1.4fr auto;gap:24px;align-items:baseline;padding:34px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.svc .n{color:var(--muted);font-size:14px}
+.svc h3{font-size:26px}
+.svc p{color:var(--muted);font-size:15px}
+.svc .arrow{font-size:22px;transition:transform .2s}
+.svc:hover .arrow{transform:translateX(6px)}
+@media (max-width:760px){.svc{grid-template-columns:1fr;gap:6px}.svc .n,.svc .arrow{display:none}}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:48px;flex-wrap:wrap}
+.head h2{font-size:clamp(30px,4vw,46px);max-width:16ch}
+.head p{color:var(--muted);max-width:40ch}
+
+/* prices */
+.prices{background:var(--soft)}
+.tabs{display:inline-flex;gap:4px;padding:5px;background:var(--surface);border-radius:var(--r);margin-bottom:36px;flex-wrap:wrap}
+.tab{border:0;background:transparent;font:500 14px "Poppins",sans-serif;color:var(--muted);padding:10px 20px;border-radius:var(--r);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
+.panel{display:none}
+.panel.on{display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:var(--surface);border-radius:var(--r-card);padding:30px;display:flex;flex-direction:column}
+.card h3{font-size:19px;margin-bottom:4px}
+.card .sub{color:var(--muted);font-size:14px;margin-bottom:18px}
+.card ul{list-style:none;font-size:14.5px;color:var(--muted);flex:1}
+.card li{padding:7px 0;border-top:1px solid var(--line)}
+.card .price{font-size:30px;font-weight:500;margin-top:22px;letter-spacing:-.02em}
+.card .price small{font-size:13px;font-weight:300;color:var(--muted)}
+.card.feature{background:var(--accent);color:var(--accent-ink)}
+.card.feature .sub,.card.feature ul,.card.feature .price small{color:inherit;opacity:.72}
+.card.feature li{border-color:rgba(127,127,127,.3)}
+.note{font-size:13px;color:var(--muted);margin-top:24px;max-width:70ch}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:72px}
+.about h2{font-size:clamp(30px,4vw,46px)}
+.about p{color:var(--muted);margin-bottom:16px}
+.facts{display:flex;gap:40px;margin-top:32px;flex-wrap:wrap}
+.facts div{font-size:14px;color:var(--muted)}
+.facts strong{display:block;font-weight:500;color:var(--ink);font-size:16px}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:24px}}
+
+/* quotes */
+.quotes{border-top:1px solid var(--line)}
+.qgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:16px}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);padding:32px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.q blockquote{font-size:16px;line-height:1.65}
+.q.big blockquote{font-size:20px;font-weight:300}
+.q cite{font-style:normal;font-size:14px;color:var(--muted)}
+@media (max-width:900px){.qgrid{grid-template-columns:1fr}}
+
+/* contact */
+.contact{background:#1c1b19;color:#f1eee9;border-radius:28px;padding:80px 56px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:end}
+.contact h2{font-size:clamp(32px,5vw,56px)}
+.contact p{opacity:.7;margin-top:16px;max-width:42ch}
+.contact .rows a{display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.15);text-decoration:none;font-size:17px}
+.contact .rows a span{opacity:.55;font-size:14px}
+.contact .actions{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+@media (max-width:860px){.contact{grid-template-columns:1fr;padding:48px 24px}}
+
+footer{padding:40px 0 56px;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{text-decoration:none}
+footer nav{display:flex;gap:20px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">Lena Hammar <span>Fotograf</span></a>
+    <ul>
+      <li><a href="#tjanster">Tjänster</a></li>
+      <li><a href="#priser">Priser</a></li>
+      <li><a href="#om">Om mig</a></li>
+      <li><a href="#omdomen">Omdömen</a></li>
+    </ul>
+    <a class="btn btn-white" href="#kontakt">Kontakta mig</a>
+  </div>
+</header>
+
+<section class="hero" style="padding:0">
+  <video autoplay muted loop playsinline preload="auto" poster="">
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+  <div class="wrap">
+    <h1>Bilder som berör. Från första blicken.</h1>
+    <p>Jag är fotograf i Stockholm och fotograferar bröllop, familjer, barn och företag – i hela Sverige.</p>
+    <div class="actions">
+      <a class="btn btn-white" href="#priser">Se bröllopspaket</a>
+      <a class="btn btn-ghost" href="#kontakt">Boka ett möte</a>
+    </div>
+  </div>
+  <span class="credit">Video: Pavel Danilyuk / Pexels</span>
+</section>
+
+<section>
+  <div class="wrap intro">
+    <img src="lena.jpg" alt="Ett urval av Lena Hammars bilder: bröllop, familj, barn och företag" loading="lazy">
+    <div>
+      <p class="eyebrow">Hej, jag heter Lena</p>
+      <h2>Ingen dag är den andra lik.</h2>
+      <p>Att få fotografera barn, familjer, företag och bröllop är ett privilegium – mitt stora intresse har blivit mitt jobb. Fotografering är för mig ett underbart uttrycksmedel, en passion.</p>
+      <p>Att träffa nya människor i olika miljöer och tillsammans arbeta mot ett gemensamt mål är både roligt och stimulerande. Min intention är enkel: att skapa bilder som berör.</p>
+      <div class="contactline">
+        <a class="btn btn-dark" href="mailto:info@lenahammar.se">info@lenahammar.se</a>
+        <a class="btn btn-line" href="tel:+46731409079">073-140 90 79</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tjanster" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <h2>Vad jag fotograferar</h2>
+      <p>Paketlösningar för det mesta – men allt går att skräddarsy efter era önskemål.</p>
+    </div>
+    <div class="services">
+      <a class="svc" href="#priser" data-tab="brollop"><span class="n">01</span><h3>Bröllop</h3><p>Från förberedelser och vigsel till mingel och middag. Stadshuset eller var ni än gifter er.</p><span class="arrow">→</span></a>
+      <a class="svc" href="#priser" data-tab="familj"><span class="n">02</span><h3>Familj & barn</h3><p>Personliga bilder utomhus eller hemma hos er. Gärna när den minsta är nyfödd.</p><span class="arrow">→</span></a>
+      <a class="svc" href="#priser" data-tab="portratt"><span class="n">03</span><h3>Porträtt</h3><p>Pressbilder och porträtt till hemsida eller LinkedIn, i dagsljus och i din närmiljö.</p><span class="arrow">→</span></a>
+      <a class="svc" href="#priser" data-tab="foretag"><span class="n">04</span><h3>Företag</h3><p>Portabel studio på plats hos er. Bilder som uttrycker trovärdighet och arbetsglädje.</p><span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="priser" class="prices">
+  <div class="wrap">
+    <div class="head">
+      <h2>Priser</h2>
+      <p>Alla priser inkl. moms. Utanför Storstockholm tillkommer resekostnad.</p>
+    </div>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" data-t="brollop">Bröllop</button>
+      <button class="tab" role="tab" aria-selected="false" data-t="familj">Familj & barn</button>
+      <button class="tab" role="tab" aria-selected="false" data-t="portratt">Porträtt</button>
+      <button class="tab" role="tab" aria-selected="false" data-t="foretag">Företag</button>
+    </div>
+
+    <div class="panel on" id="p-brollop">
+      <div class="grid">
+        <div class="card"><h3>Stadshuspaket</h3><p class="sub">Porträtt, vigsel och gruppbilder · ca 1,5 h</p>
+          <ul><li>50–60 redigerade, högupplösta bilder</li><li>3 st A4 + 3 st A5 förstoringar</li><li>Efterbearbetning i Photoshop</li></ul>
+          <p class="price">9 500 kr</p></div>
+        <div class="card"><h3>Stadshuspaket Plus</h3><p class="sub">Stadshuset + ca 1 h på hotell, restaurang eller annan plats</p>
+          <ul><li>Ca 80–100 redigerade bilder</li><li>3 st A4 + 3 st A5 förstoringar</li><li>Efterbearbetning i Photoshop</li></ul>
+          <p class="price">14 900 kr</p></div>
+        <div class="card"><h3>Paket 1 · Porträtt</h3><p class="sub">Bröllopsporträtt på valfri plats · 1–1,5 h</p>
+          <ul><li>Ca 30 redigerade bilder</li><li>3 st A4 + 3 st A5 förstoringar</li><li>Efterbearbetning i Photoshop</li></ul>
+          <p class="price">8 900 kr</p></div>
+        <div class="card"><h3>Paket 2 · Porträtt & vigsel</h3><p class="sub">Videomöte innan, porträtt, vigsel och gruppbilder</p>
+          <ul><li>Inmarsch, ringbyte, kyssen, riskastning, gratulationer</li><li>100–150 redigerade bilder</li><li>3 st A4 + 3 st A5 förstoringar</li></ul>
+          <p class="price">15 900 kr</p></div>
+        <div class="card feature"><h3>Paket 3 · Med mingel</h3><p class="sub">Som paket 2 + mingel och brudens skål</p>
+          <ul><li>Reportage av mingel, festlokal och dukning</li><li>200–250 redigerade bilder</li><li>3 st A4 + 3 st A5 förstoringar</li></ul>
+          <p class="price">19 900 kr</p></div>
+        <div class="card"><h3>Paket 4 · Halvdag</h3><p class="sub">Som paket 3 + 1–1,5 h under middagen</p>
+          <ul><li>Porträtt, vigsel, mingel och middag</li><li>300–400 redigerade bilder</li><li>3 st A4 + 3 st A5 förstoringar</li></ul>
+          <p class="price">26 900 kr</p></div>
+        <div class="card"><h3>Paket 5 · Heldag</h3><p class="sub">Hela dagen, från förberedelserna</p>
+          <ul><li>Smink, hår och påklädning</li><li>Porträtt, vigsel, mingel och middag</li><li>Kontakta mig för upplägg</li></ul>
+          <p class="price"><small>Pris på förfrågan</small></p></div>
+      </div>
+      <p class="note">Vill ni hellre skräddarsy ert eget paket? Boka gärna ett möte utan förbindelser så pratar vi om era bröllopsplaner.</p>
+    </div>
+
+    <div class="panel" id="p-familj">
+      <div class="grid">
+        <div class="card feature"><h3>Barn- & familjefotografering</h3><p class="sub">Utomhus eller i ert hem · ca 1–1,5 h</p>
+          <ul><li>20–25 digitala bilder</li><li>3 st A4 + 3 st A5 förstoringar på högkvalitetspapper</li><li>Efterbearbetning i Photoshop</li></ul>
+          <p class="price">5 400 kr</p></div>
+        <div class="card"><h3>Fest, dop & evenemang</h3><p class="sub">Fester, dop, bilder till hemsida m.m.</p>
+          <ul><li>Upplägg efter era önskemål</li></ul>
+          <p class="price"><small>Pris på förfrågan</small></p></div>
+        <div class="card"><h3>Presentkort</h3><p class="sub">En fotografering som gåva eller julklapp</p>
+          <ul><li>Valfritt belopp eller paket</li></ul>
+          <p class="price"><small>Hör av dig</small></p></div>
+      </div>
+    </div>
+
+    <div class="panel" id="p-portratt">
+      <div class="grid">
+        <div class="card feature"><h3>CV- & porträttfotografering</h3><p class="sub">Pressbilder, hemsida, LinkedIn</p>
+          <ul><li>Dagsljus i din närmiljö, inne eller ute</li><li>Olika bakgrunder och fotomiljöer</li><li>6–8 redigerade, högupplösta bilder</li></ul>
+          <p class="price">5 900 kr</p></div>
+      </div>
+    </div>
+
+    <div class="panel" id="p-foretag">
+      <div class="grid">
+        <div class="card feature"><h3>Företagsporträtt</h3><p class="sub">Hemsida, årsredovisning, presentationer</p>
+          <ul><li>Portabel studio på plats hos er</li><li>Eller inhyrd fotostudio</li><li>Inomhus och utomhus</li></ul>
+          <p class="price"><small>Pris på förfrågan</small></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="om">
+  <div class="wrap about">
+    <div>
+      <p class="eyebrow">Om mig</p>
+      <h2>Att vara där när det händer.</h2>
+    </div>
+    <div>
+      <p>När jag började som professionell fotograf var jag rädd att hobbyn skulle bli rutin. Farhågorna var helt ogrundade. Varje barn, bröllop och familj är unik – för mig handlar fotografi om att fånga ögonblicket.</p>
+      <p>Ett företagsporträtt ställer andra krav än en familjefotografering. Vilken profil har företaget? Finns det en visuell identitet att förhålla sig till? Oavsett uppdrag är alla lika kul och utmanande. Det är därför jag älskar det här jobbet.</p>
+      <div class="facts">
+        <div><strong>Stockholm</strong>Uppdrag i hela Sverige</div>
+        <div><strong>Kulturama & GFU</strong>Utbildning</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="omdomen" class="quotes">
+  <div class="wrap">
+    <div class="head"><h2>Från de jag fotograferat</h2></div>
+    <div class="qgrid">
+      <figure class="q big"><blockquote>Du har lyckats fånga och förmedla både värme, innerlighet och glädje! Det var så fint att se hur du lockade Vira att medverka, och väldigt skönt att kunna fota hemma när Vanja var så liten.</blockquote><cite>Lisen och Mats</cite></figure>
+      <figure class="q"><blockquote>We have just finished looking at the prints, they are amazing. You have a beautiful touch with the camera.</blockquote><cite>Lawrence & Diana, London</cite></figure>
+      <figure class="q"><blockquote>Vilka fina bilder! Du förstod precis vilka slags bilder vi hade tänkt oss.</blockquote><cite>Fam. Rosenblad</cite></figure>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" style="padding-top:0">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <h2>Ska vi ses?</h2>
+        <p>Berätta vad du har i tankarna – ett bröllop, en familjebild eller nya porträtt till jobbet. Jag svarar så snart jag kan.</p>
+        <div class="actions"><a class="btn btn-white" href="mailto:info@lenahammar.se?subject=Förfrågan%20fotografering">Skicka ett mejl</a></div>
+      </div>
+      <div class="rows">
+        <a href="mailto:info@lenahammar.se">info@lenahammar.se <span>Mejl</span></a>
+        <a href="tel:+46731409079">073-140 90 79 <span>Telefon</span></a>
+        <a href="https://instagram.com/lenahammarfotograf" target="_blank" rel="noopener">@lenahammarfotograf <span>Instagram</span></a>
+        <a href="https://www.linkedin.com/in/fotograf-lenahammar/" target="_blank" rel="noopener">fotograf-lenahammar <span>LinkedIn</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© Fotograf Lena Hammar</span>
+    <nav><a href="#tjanster">Tjänster</a><a href="#priser">Priser</a><a href="#kontakt">Kontakt</a></nav>
+  </div>
+</footer>
+
+<script>
+const tabs=document.querySelectorAll('.tab');
+function show(t){tabs.forEach(b=>b.setAttribute('aria-selected',b.dataset.t===t));document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+t));}
+tabs.forEach(b=>b.onclick=()=>show(b.dataset.t));
+document.querySelectorAll('[data-tab]').forEach(a=>a.addEventListener('click',()=>show(a.dataset.tab)));
+</script>
+</body>
+</html>
